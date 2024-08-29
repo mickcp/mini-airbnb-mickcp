@@ -1,0 +1,146 @@
+<% layout("/layouts/boilerplate")%>
+<!--  We defined flashes in boiler plate code  -->
+
+<style>
+
+#filters{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+margin-left: 1rem;
+margin-right: 1rem;
+}
+
+.filter{
+text-align: center;
+margin-right: 1.5rem;
+margin-top: 1rem;
+margin-bottom: 2rem;
+opacity: 0.7;
+}
+
+.filter:hover{
+opacity: 1;
+cursor: pointer;
+}
+
+.filter p{
+  font-size:0.8rem;
+}
+
+</style>
+
+
+<div id="filters">
+  <div class="filter">
+    <i class="fa-solid fa-fire"></i>
+    <P>Treanding </P>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-bed"></i>
+     <P> Rooms </P>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-mountain-city"></i>
+    <P> City Mountion </P>
+  </div>
+
+  <div class="filter">
+    <i class="fa-regular fa-snowflake"></i>
+    <p> Snow World </p>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-igloo"></i>
+    <p> Winter Home </p>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-person-swimming"></i>
+    <p> Pools </p>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-bug"></i>
+     <p>Garden Rooms </p>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-cable-car"></i>
+    <p> Adventuras </p>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-leaf"></i>
+    <p> Tree House </p>
+  </div>
+
+  <div class="filter">
+    <i class="fa-solid fa-ship"></i>
+    <p> Boat House </p>
+  </div>
+
+
+
+  <!--  -->
+  <div class="filter">
+    <i class="fa-brands fa-linux"></i>
+    <p> Snow Room</p>
+  </div>
+
+  <div class="filter">
+    <i class="fa-brands fa-fly"></i>
+    <p> fly balloon </p>
+  </div>
+
+  
+  <div class="filter">
+    <i class="fa-solid fa-cloud-meatball"></i>
+    <p> Cloud Land</p>
+  </div>
+
+  
+  
+  <div class="filter">
+    <i class="fa-solid fa-user-astronaut"></i>
+    <p> Space World</p>
+  </div>
+
+
+
+
+</div>
+
+<body>
+  <div class="alldetails">
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-sm-2">
+      <!-- <div class="row   col-lg-3">  -->
+      <% for(let list of allListing){ %>
+      <a href="/listings/<%=list._id%>" class="listinglinks">
+        <div class="card">
+          <!-- col -->
+          <img
+            class="card-img-top"
+            src="<%=list.image.url%>"
+            alt="listing image"
+            style="height: 20rem"
+          />
+
+          <div class="card-img-overlay"></div>
+
+          <div class="card-body">
+            <p class="card-text">
+              <b> <%=list.title%> </b> <br />
+              &#8377;<%=list.price.toLocaleString("en-IN")%>/night
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <% } %>
+    </div>
+  </div>
+</body>
